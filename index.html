@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Composteira PET Inteligente</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Calculadora de Composteira PET ⚖</h2>
+
+        <!-- Tabela Geral de Referência -->
+        <div class="info-proporcao">
+            <strong>Tabela de Nutrientes (Carga por Grama):</strong><br>
+            ☕ <strong>Borra de Café:</strong> Alto Nitrogênio (20mg N | 3mg P | 3mg K)<br>
+            🍌 <strong>Casca de Banana:</strong> Super Potássio (0mg N | 7mg P | 42mg K | 19mg Ca)<br>
+            🥔 <strong>Casca de Batata:</strong> Potássio Médio (0mg N | 2mg P | 18mg K | 2mg Ca)<br>
+            🥚 <strong>Casca de Ovo:</strong> Super Cálcio (0mg N | 4mg P | 0mg K | 390mg Ca)
+        </div>
+
+        <!-- Meta Prática Mensal de Compostagem -->
+        <div class="info-proporcao" style="background-color: rgba(56, 189, 248, 0.08); border-color: rgba(56, 189, 248, 0.2);">
+            <strong>📊 Meta de Nutrição Orgânica por MÊS (Estimação Real):</strong><br>
+            🍅 <strong>Pé de Tomate:</strong> Mistura rica para alta demanda de frutos.<br>
+            🫘 <strong>Pé de Feijão:</strong> Demanda leve para ciclo rápido de 3 meses.<br>
+            <small style="color: #94a3b8; display: block; margin-top: 5px;">* Baseado no volume máximo seguro para uma minicomposteira de Garrafa PET (2 Litros).</small>
+        </div>
+
+        <!-- Seletor de Plantas -->
+        <div class="input-group">
+            <label for="tipoPlanta">🌱 Alvo da Adubação:</label>
+            <select id="tipoPlanta">
+                <option value="tomate">🍅 Pé de Tomate (Mistura Forte)</option>
+                <option value="feijao">🫘 Pé de Feijão (Mistura Suave)</option>
+            </select>
+        </div>
+
+        <!-- Botão de Sugestão Automática -->
+        <button type="button" id="btnSugerir" class="btn-secundario">✨ Sugerir Receita para 1 Garrafa PET</button>
+
+        <hr style="border: 1px solid rgba(255,255,255,0.1); margin: 20px 0;">
+
+        <!-- Entradas de Gramas -->
+        <div class="input-group">
+            <label for="cafe">☕ Borra de Café Fresca/Úmida (g):</label>
+            <input type="number" id="cafe" placeholder="0" min="0">
+        </div>
+
+        <div class="input-group">
+            <label for="banana">🍌 Casca de Banana Picada (g):</label>
+            <input type="number" id="banana" placeholder="0" min="0">
+        </div>
+
+        <div class="input-group">
+            <label for="batata">🥔 Casca de Batata Picada (g):</label>
+            <input type="number" id="batata" placeholder="0" min="0">
+        </div>
+
+        <div class="input-group">
+            <label for="ovo">🥚 Casca de Ovo Triturada (g):</label>
+            <input type="number" id="ovo" placeholder="0" min="0">
+        </div>
+
+        <button type="button" id="btnCalcular">Analisar Volume e Gerar Doses</button>
+
+        <!-- Resultados -->
+        <div class="resultado" id="resultadoDiv">
+            <h3>Resultado do seu Composto:</h3>
+            <ul>
+                <li>Total de Alimentos (Úmidos): <strong id="totalVerdes">0</strong> g</li>
+                <li>🍂 Folhas Secas / Serragem Necessárias: <strong id="totalSecos">0</strong> g</li>
+            </ul>
+
+            <h3>Carga Nutricional Estimada na PET:</h3>
+            <ul class="lista-nutrientes">
+                <li><span>Nitrogênio (N):</span> <strong id="nutriN">0</strong> mg</li>
+                <li><span>Fósforo (P):</span> <strong id="nutriP">0</strong> mg</li>
+                <li><span>Potássio (K):</span> <strong id="nutriK">0</strong> mg</li>
+                <li><span>Cálcio (Ca):</span> <strong id="nutriCa">0</strong> mg</li>
+            </ul>
+
+            <div class="painel-diagnostico">
+                <h4>💡 Diagnóstico e Guia de Aplicação Segura:</h4>
+                <p id="textoAjuste">Insira valores para ver a análise.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
